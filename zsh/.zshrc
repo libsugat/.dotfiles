@@ -1,63 +1,49 @@
-unbind r
-bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded."
+# Source global definitions
+if [ -f /etc/zshrc ]; then
+    . /etc/zshrc
+fi
 
-set -g prefix C-s
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
 
-set-option -g status-position top
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/sugat/.zshrc'
 
-set -g mouse on
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
-bind -n C-h select-pane -L
-bind -n C-j select-pane -D
-bind -n C-k select-pane -U
-bind -n C-l select-pane -R
+# Vim keybindind for zsh
+bindkey -v
 
-bind -r H resize-pane -L 2 
-bind -r L resize-pane -R 2 
-bind -r K resize-pane -U 2 
-bind -r J resize-pane -D 2 
+# Starship.rs
+eval "$(starship init zsh)"
 
-set -g default-terminal "tmux-256color"
 
-set -g base-index 1
-setw -g pane-base-index 1
+# Fans control alias
+alias fan-turbo='sudo bash -c "echo 0 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon5/pwm1_enable"'
+alias fan-auto='sudo bash -c "echo 2 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon5/pwm1_enable"'
 
-# List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'janoamaral/tokyo-night-tmux'
-set -g @plugin 'christoomey/vim-tmux-navigator'
+# Syntax highlighting
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Auto Suggestion
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
-set -g @tokyo-night-tmux_theme night # storm | day | default to 'night'
+bindkey '^I' complete-word
+bindkey '^@' autosuggest-accept
 
-run '~/.tmux/plugins/tpm/tpm'
+source <(fzf --zsh)
 
-set -g status-interval 1
-set -g status-left '#{?client_prefix,\
-#[bg=#a9d07c fg=black]  #[default bg=#060914 fg=#a9d07c],\
-#[bg=#a3aed2 fg=black]  #[default bg=#060914 fg=#a3aed2]}\
-#[default,bg=#769ff0,fg=#060914]\
-#[bg=#769ff0,fg=#090c0c,bold]  #S \
-#[fg=#769ff0,bg=#060914]\
-#[default]'
+# NPM config user space
+export PATH="$PATH:$HOME/.local/share/npm-global/bin"
 
-set -g status-right '#[bg=#060914,fg=#212736,bold]\
-#[fg=#769ff0,bg=#212736] %l:%M %p \
-#[default,fg=#769ff0,bg=#212736]\
-#[bg=#769ff0,fg=#090c0c,bold]%Y.%m.%d '
-
-# # Style for active window 
-set -g window-status-current-format '#[default,bg=#769ff0,fg=#060914]\
-#[bold] #I:#W \
-#[default,fg=#769ff0,bg=#060914]\
-#[default,bg=#060914]'
-set -g window-status-current-style bg=#759ff0,fg=#090c0c
-
-# Style for inactive windows
-set -g window-status-format '#[default,fg=#060914]\
-#[bold,fg=#769ff0,bg=#212736] #I:#W \
-#[default,fg=#212736,bg=#060914]\
-#[default,bg=#060914]'
-set -g window-status-style bg=#212736,fg=#769ff0
-set -g status-style bg=#060914,fg=#bdbfcb
-set -g message-style "bg=#a9d07c,fg=black,bold"
-set -g message-command-style "bg=#a9d07c,fg=black,bold"
