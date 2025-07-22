@@ -1,0 +1,7 @@
+[Unit]
+Description=Set gamma to 6500K
+
+[Service]
+Type=oneshot
+ExecStart=%h/.dotfiles/scripts/systemd/set_temp_low.sh
+

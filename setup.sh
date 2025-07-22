@@ -11,6 +11,8 @@ declare -A FILES=(
   ["$HOME/.config/kitty"]="$DOTFILES_DIR/kitty"
   ["$HOME/.config/starship.toml"]="$DOTFILES_DIR/starship.rs/starship.toml"
   ["$HOME/.zshrc"]="$DOTFILES_DIR/zsh/.zshrc"
+  ["$HOME/.config/sway"]="$DOTFILES_DIR/desktop/sway"
+  ["$HOME/.config/waybar"]="$DOTFILES_DIR/desktop/waybar"
 )
 echo "⚠️ Warning: This will overwrite existing config files:"
 for target in "${!FILES[@]}"; do
@@ -26,6 +28,10 @@ if [[ "$confirm" != "y" && "$confirm" != "yes" ]]; then
   echo "Aborted. No changes made."
   exit 1
 fi
+
+# Clone tpm
+echo "Cloning tmux plugin manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Starting dotfiles setup from $DOTFILES_DIR"
 

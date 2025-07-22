@@ -1,0 +1,6 @@
+[Unit]
+Description=Set gamma to 4000K
+
+[Service]
+Type=oneshot
+ExecStart=%h/.dotfiles/scripts/systemd/set_temp_high.sh
