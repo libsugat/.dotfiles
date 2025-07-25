@@ -1,0 +1,19 @@
+:root {
+    /* --cc-bg: rgba(15, 16, 27, 0.7); /1* background: #0F101B *1/ */
+    /* --noti-border-color: rgba(189, 191, 203, 0.15); /1* foreground: #BDBFCB *1/ */
+    --cc-bg: rgba(15, 16, 27, 0.7); /* kitty background (#0F101B) with alpha */
+    --noti-border-color: rgba(189, 191, 203, 0.15); /* foreground with low alpha */
+
+    --noti-bg: 15, 16, 27; /* background */
+    --noti-bg-alpha: 0.85;
+    --noti-bg-darker: rgb(13, 14, 24); /* darker base */
+    --noti-bg-hover: rgb(52, 55, 66); /* selection background: #343742 */
+    --noti-bg-focus: rgba(187, 93, 125, 0.3); /* #BB5D7D with transparency */
+    --noti-close-bg: rgb(52, 55, 66); /* hover base */
+    --noti-close-bg-hover: rgb(101, 103, 113); /* inactive_tab_foreground */
+
+    --text-color: rgb(189, 191, 203); /* foreground */
+    --text-color-disabled: rgb(135, 137, 150); /* color7 */
+    --bg-selected: rgb(187, 93, 125); /* color13: signature magenta */
+
+}

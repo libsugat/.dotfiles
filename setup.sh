@@ -13,6 +13,7 @@ declare -A FILES=(
   ["$HOME/.zshrc"]="$DOTFILES_DIR/zsh/.zshrc"
   ["$HOME/.config/sway"]="$DOTFILES_DIR/desktop/sway"
   ["$HOME/.config/waybar"]="$DOTFILES_DIR/desktop/waybar"
+  ["$HOME/.config/swaync"]="$DOTFILES_DIR/desktop/swaync"
 )
 echo "⚠️ Warning: This will overwrite existing config files:"
 for target in "${!FILES[@]}"; do

@@ -4,6 +4,11 @@
     margin : 1px 0 0 0;
 }
 
+tooltip {
+    background-color: #1D202B;
+    padding : 5px;
+}
+
 window#waybar {
     background-color: transparent;
     border-bottom: 0px solid rgba(100, 114, 125, 0.5);
@@ -88,6 +93,7 @@ button:hover {
 #backlight,
 #network,
 #pulseaudio,
+#mpris,
 #wireplumber,
 #custom-media,
 #tray,
