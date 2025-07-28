@@ -1,0 +1,23 @@
+set $dotfiles ~/.dotfiles
+set $sway_scripts $dotfiles/scripts/sway/
+set $startup_scripts $dotfiles/scripts/sway-startup/
+
+set $desktop_bg ~/.dotfiles/images/background.jpg
+
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term kitty
+# Your preferred application launcher
+set $menu rofi -show drun
+
+
+

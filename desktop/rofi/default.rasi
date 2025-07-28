@@ -1,0 +1,10 @@
+* {
+    background:     #121520;
+    background-alt: #383E51;
+    foreground:     #BDBFCB;
+    selected:       #9EA9E6;
+    active:         #a9d076;
+    urgent:         #F7768E;
+
+    font: "Ubuntu Nerd Font Propo 12";
+}

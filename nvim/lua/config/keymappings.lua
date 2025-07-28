@@ -9,6 +9,7 @@ end
 
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Delete buffer (quit buffer)" })
 
 -- increment/decrement numbers
 -- keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment

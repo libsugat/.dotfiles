@@ -4,33 +4,20 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-set $dotfiles ~/.dotfiles
-set $sway_scripts $dotfiles/scripts/sway/
-set $startup_scripts $dotfiles/scripts/sway-startup/
+include globals
 
-exec ~/.cargo/bin/wl-gammarelay-rs 
 exec waybar
-exec_always $startup_scripts/nightlight.sh
 exec_always ~/.local/bin/autotiling
-
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-# Your preferred terminal emulator
-set $term kitty
-# Your preferred application launcher
-set $menu rofi -show drun
+exec ~/.cargo/bin/wl-gammarelay-rs 
+exec_always $startup_scripts/nightlight.sh
+exec nm-applet
+exec kdeconnectd
+exec kdeconnectd-indicator
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.dotfiles/images/background.jpg fill
+output * bg $desktop_bg fill
 #
 # Example configuration:
 #
@@ -239,6 +226,8 @@ bindsym $mod+r mode "resize"
     bindsym Ctrl+Print exec $sway_scripts/screenshot.sh --monitor
 
     bindsym $mod+n exec swaync-client -t
+
+    bindsym $mod+t exec $dotfiles/desktop/rofi/scripts/powermenu.sh
 
 #
 # Status Bar:
