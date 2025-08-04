@@ -16,7 +16,8 @@ return {
                             text_align = "center"              -- Optional: "left" | "center" | "right"
                         }
                     },
-                    -- mode = "tabs",
+                    diagnostics = "nvim_lsp",
+                    mode = "tabs",
                 },
             })
 
