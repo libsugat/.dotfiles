@@ -11,6 +11,8 @@ end
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<leader>q", ":bd<CR>", { desc = "Delete buffer (quit buffer)" })
 
+keymap.set('n', '<leader>ww', ':setlocal wrap!<CR>', { desc = "Toggle word wrap per window",  noremap = true, silent = true })
+
 -- increment/decrement numbers
 -- keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 -- keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
