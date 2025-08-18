@@ -74,9 +74,9 @@ return {
             vim.diagnostic.config({
                 signs = {
                     text = {
-                        [vim.diagnostic.severity.ERROR] = ' ',
-                        [vim.diagnostic.severity.WARN] = ' ',
-                        [vim.diagnostic.severity.INFO] = ' ',
+                        [vim.diagnostic.severity.ERROR] = '',
+                        [vim.diagnostic.severity.WARN] = '',
+                        [vim.diagnostic.severity.INFO] = '',
                         [vim.diagnostic.severity.HINT] = '',
                     },
                 }
@@ -86,6 +86,17 @@ return {
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
             vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, {})
+
+            vim.keymap.set('n', '<leader>ce', function ()
+                vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+            end, { desc = "Go to next error"})
+            vim.keymap.set('n', '<leader>cE', function ()
+                vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+            end, { desc = "Go to previous error"})
+
+            vim.keymap.set('n', '<leader>cf', function ()
+                vim.lsp.buf.format({ async = true })
+            end, { desc = "Format current buffer"})
         end
     },
     {
