@@ -50,5 +50,3 @@ export PATH="$PATH:$HOME/.local/share/npm-global/bin"
 # ---- Yazi setup ----
 export EDITOR="nvim"
 
-# --------- bat (better cat) ----------
-export BAT_THEME=tokyonight_night

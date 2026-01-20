@@ -4,11 +4,14 @@ return  {
     },
     {
         'L3MON4D3/LuaSnip',
+        version = "2.*",
+        build = "make install_jsregexp",
         depandency = {
             'saadparwaiz1/cmp_luasnip',
             -- add friendly snipets for vs code snippits
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
+            "rafamadriz/friendly-snippets",
         },
     },
     {

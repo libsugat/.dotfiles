@@ -9,6 +9,12 @@ return {
     lazy = false,
     config = function()
         require('neo-tree').setup({
+            sources = {
+                "filesystem",
+                "buffers",
+                "git_status",
+                "document_symbols", -- <- this one!
+            },
             popup_border_style = "rounded",
             window = {
                 border = "none",
@@ -36,6 +42,7 @@ return {
             silent = true,
             desc = "Toggle File explorer (Neotree)"
         })
+        vim.keymap.set("n", "<leader>cs", ":Neotree document_symbols reveal=true<CR>", { desc = "Show code symbols" })
     end
 }
 

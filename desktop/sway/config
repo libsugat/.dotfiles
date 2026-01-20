@@ -216,14 +216,14 @@ bindsym $mod+r mode "resize"
     bindsym $mod+XF86AudioLowerVolume exec playerctl previous
     bindsym $mod+XF86AudioRaiseVolume exec playerctl next
 
+    bindsym XF86AudioPlay exec playerctl play-pause
+    bindsym XF86AudioPrev exec playerctl previous
+    bindsym XF86AudioNext exec playerctl next
+
     # Screenshots
     bindsym $mod+p exec $sway_scripts/screenshot.sh --monitor
     bindsym $mod+Shift+p exec $sway_scripts/screenshot.sh --selection
     bindsym $mod+Ctrl+p exec $sway_scripts/screenshot.sh --window
-
-    bindsym Print exec $sway_scripts/screenshot.sh --monitor
-    bindsym Shift+Print exec $sway_scripts/screenshot.sh --selection
-    bindsym Ctrl+Print exec $sway_scripts/screenshot.sh --monitor
 
     bindsym $mod+n exec swaync-client -t
 
