@@ -49,6 +49,19 @@ return {
                 capabilities = capabilities,
             })
 
+            -- vim.lsp.config('clangd', {
+            --     capabilities = capabilities,
+            --     cmd = { "clangd", "--background-index", "--clang-tidy", "--completion-style=detailed" },
+            --     filetypes = { "c", "cpp", "objc", "objcpp" },
+            --     root_dir = require('lspconfig.util').root_pattern(
+            --         "compile_commands.json",
+            --         ".git"
+            --     ),
+            --     init_options = {
+            --         clangdFileStatus = true,  -- show file status in statusline
+            --     },
+            -- })
+
             vim.diagnostic.config({
                 update_in_insert = true,
                 virtual_text = true,
