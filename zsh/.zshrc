@@ -37,9 +37,9 @@ alias fan-turbo='sudo bash -c "echo 0 > /sys/devices/platform/asus-nb-wmi/hwmon/
 alias fan-auto='sudo bash -c "echo 2 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon5/pwm1_enable"'
 
 # Syntax highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Auto Suggestion
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 bindkey '^I' complete-word
@@ -53,3 +53,17 @@ export PATH="$PATH:$HOME/.local/share/npm-global/bin"
 # ---- Yazi setup ----
 export EDITOR="nvim"
 
+export LESS="-R"
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+export MANPAGER="less -R"
+
+export LESS_TERMCAP_mb=$'\e[1;31m'
+export LESS_TERMCAP_md=$'\e[1;36m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[1;44;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;32m'
+alias diff='diff --color=always'

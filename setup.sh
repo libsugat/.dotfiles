@@ -14,6 +14,7 @@ declare -A FILES=(
   ["$HOME/.config/sway"]="$DOTFILES_DIR/desktop/sway"
   ["$HOME/.config/waybar"]="$DOTFILES_DIR/desktop/waybar"
   ["$HOME/.config/swaync"]="$DOTFILES_DIR/desktop/swaync"
+  ["$HOME/.config/rofi/"]="$DOTFILES_DIR/desktop/rofi"
 )
 echo "⚠️ Warning: This will overwrite existing config files:"
 for target in "${!FILES[@]}"; do
@@ -31,8 +32,8 @@ if [[ "$confirm" != "y" && "$confirm" != "yes" ]]; then
 fi
 
 # Clone tpm
-echo "Cloning tmux plugin manager"
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# echo "Cloning tmux plugin manager"
+# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Starting dotfiles setup from $DOTFILES_DIR"
 
