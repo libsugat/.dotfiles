@@ -32,8 +32,8 @@ if [[ "$confirm" != "y" && "$confirm" != "yes" ]]; then
 fi
 
 # Clone tpm
-# echo "Cloning tmux plugin manager"
-# git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "Cloning tmux plugin manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Starting dotfiles setup from $DOTFILES_DIR"
 
