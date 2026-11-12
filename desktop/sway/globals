@@ -9,15 +9,19 @@ set $desktop_bg ~/.dotfiles/images/background.jpg
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
+
+# preferred terminal emulator
 set $term kitty
-# Your preferred application launcher
+
+# preferred application launcher
 set $menu rofi -show drun
+set $browser zen-browser
 
 
 

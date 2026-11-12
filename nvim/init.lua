@@ -15,7 +15,8 @@ require("config.keymappings")
 require("config.lazy")
 
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 -- Ensure all folds are open by default
 vim.opt.foldenable = true         -- enables folding (required)
 vim.opt.foldlevel = 99            -- ensures folds are open

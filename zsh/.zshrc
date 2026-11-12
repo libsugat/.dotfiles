@@ -33,8 +33,9 @@ eval "$(starship init zsh)"
 
 
 # Fans control alias
-alias fan-turbo='sudo bash -c "echo 0 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon5/pwm1_enable"'
-alias fan-auto='sudo bash -c "echo 2 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon5/pwm1_enable"'
+alias fan-turbo='sudo bash -c "echo 0 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon3/pwm1_enable"'
+alias fan-auto='sudo bash -c "echo 2 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon3/pwm1_enable"'
+alias fan-show='sudo bash -c "cat /sys/devices/platform/asus-nb-wmi/hwmon/hwmon3/pwm1_enable"'
 
 # Syntax highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -57,6 +58,8 @@ export LESS="-R"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias ncdu='ncdu --color dark'
+
 export MANPAGER="less -R"
 
 export LESS_TERMCAP_mb=$'\e[1;31m'

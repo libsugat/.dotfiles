@@ -15,6 +15,7 @@ declare -A FILES=(
   ["$HOME/.config/waybar"]="$DOTFILES_DIR/desktop/waybar"
   ["$HOME/.config/swaync"]="$DOTFILES_DIR/desktop/swaync"
   ["$HOME/.config/rofi/"]="$DOTFILES_DIR/desktop/rofi"
+  ["$HOME/.config/hypr/hyprlock.conf"]="$DOTFILES_DIR/desktop/hyprlock/hyprlock.conf"
 )
 echo "⚠️ Warning: This will overwrite existing config files:"
 for target in "${!FILES[@]}"; do
